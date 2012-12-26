@@ -31,7 +31,7 @@ myTerminal = "/usr/bin/urxvt"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
+myWorkspaces = ["1:term","2:comm","3:web"] ++ map show [4..9]
  
 
 ------------------------------------------------------------------------
@@ -75,9 +75,7 @@ myLayout = avoidStruts (
     Tall 1 (3/100) (1/2) |||
     Mirror (Tall 1 (3/100) (1/2)) |||
     tabbed shrinkText tabConfig |||
-    Full |||
-    spiral (6/7)) |||
-    noBorders (fullscreenFull Full)
+    noBorders (fullscreenFull Full))
 
 
 ------------------------------------------------------------------------
@@ -115,7 +113,7 @@ myBorderWidth = 1
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask = mod1Mask
+myModMask = mod4Mask
  
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
@@ -320,7 +318,7 @@ myStartupHook = return ()
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "~/.cabal/bin/xmobar ~/.xmonad/xmobar.hs"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
