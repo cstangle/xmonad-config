@@ -10,8 +10,8 @@ Config {
     position = BottomW L 90,
     lowerOnStart = True,
     commands = [
-          --Run Weather "KCQT" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000
-          Run Weather "KGEG" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000
+          Run Weather "KCQT" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000
+          --Run Weather "KGEG" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000
           --Run Weather "ZSPD" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000
         , Run MultiCpu ["-t","Cpu:<total0><total1>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10
         , Run Memory ["-t","Mem: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10
@@ -23,5 +23,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader% }{ %multicpu% %memory% %eth0% %wlan0wi% %battery% <fc=#FFFFCC>%date%</fc>   %KGEG%"
+    template = "%StdinReader% }{ %multicpu% %memory% %eth0% %wlan0wi% %battery% <fc=#FFFFCC>%date%</fc>   %KCQT%"
 }
